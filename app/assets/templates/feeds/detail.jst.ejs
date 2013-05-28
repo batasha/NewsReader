@@ -1,0 +1,9 @@
+<ul>
+  <% entries.each(function(entry) { %>
+    <li>
+      <a href="#/entries/<%= entry.escape("id") %>">
+        <%= entry.escape("title") %>
+      </a>
+    </li>
+  <% }); %>
+</ul>

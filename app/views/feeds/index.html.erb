@@ -1,0 +1,11 @@
+<div id="feed-sidebar"></div>
+<div id="entry-sidebar"></div>
+<div id="entry-content"></div>
+
+<script type="text/javascript">
+  $(function() {
+    feeds = <%= Feed.includes(:entries).all.to_json(include: :entries).html_safe %>;
+
+    window.News.initialize($("body")[0], feeds);
+  });
+</script>
