@@ -1,0 +1,29 @@
+#feed-sidebar {
+  margin: 10px;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin: 5px 20px;
+    }
+  }
+}
+
+
+
+#entry-sidebar {
+  float: left;
+  width: 200px;
+  margin: 10px;
+
+  ul {
+    list-style: none;
+    margin: 0px;
+
+    li {
+      margin: 5px;
+    }
+  }
+}

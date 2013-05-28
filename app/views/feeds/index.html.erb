@@ -6,6 +6,11 @@
   $(function() {
     feeds = <%= Feed.includes(:entries).all.to_json(include: :entries).html_safe %>;
 
-    window.News.initialize($("body")[0], feeds);
+    window.News.initialize(
+      $("#feed-sidebar"),
+      $("#entry-sidebar"),
+      $("#entry-content"),
+      feeds
+    );
   });
 </script>

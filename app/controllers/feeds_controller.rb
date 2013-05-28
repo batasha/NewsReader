@@ -26,4 +26,10 @@ class FeedsController < ApplicationController
       render json: @feed.errors, status: 422
     end
   end
+
+  def show
+    @feed = Feed.includes(:entries).find(params[:id])
+    @feed.update_entries
+    render json: @feed.to_json(include: :entries)
+  end
 end

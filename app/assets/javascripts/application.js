@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require backbone-rails
 //= require backbone-relational
+//= require bootstrap
 //
 //= require news
 //

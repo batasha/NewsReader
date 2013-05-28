@@ -1,6 +1,8 @@
 News.Routers.FeedsRouter = Backbone.Router.extend({
-  initialize: function(rootEl, feeds){
-    this.$rootEl = $(rootEl);
+  initialize: function($feedSidebar, $entrySidebar, $entryContent, feeds){
+    this.$feedSidebar = $feedSidebar;
+    this.$entrySidebar = $entrySidebar;
+    this.$entryContent = $entryContent;
     this.feeds = feeds;
   },
 
@@ -17,7 +19,7 @@ News.Routers.FeedsRouter = Backbone.Router.extend({
       collection: that.feeds
     });
 
-    that.$rootEl.html(feedsIndexView.render().$el);
+    that.$feedSidebar.html(feedsIndexView.render().$el);
   },
 
   show: function(id) {
@@ -30,7 +32,7 @@ News.Routers.FeedsRouter = Backbone.Router.extend({
       model: feed
     });
 
-    that.$rootEl.html(feedView.render().$el);
+    that.$entrySidebar.html(feedView.render().$el);
   },
 
   showEntry: function(id) {
@@ -41,6 +43,6 @@ News.Routers.FeedsRouter = Backbone.Router.extend({
       model: entry
     });
 
-    that.$rootEl.html(entryView.render().$el);
+    that.$entryContent.html(entryView.render().$el);
   }
 });
